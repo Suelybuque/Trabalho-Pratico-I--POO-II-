@@ -29,14 +29,28 @@ public final class Directo extends Internacional implements CalculoFinal_IVA {
                 "refeicao='" + refeicao + '\'' +
                 '}';
     }
-
-    @Override
-    public float valIva() {
-        return 0;
+    public float vp()
+    {
+        float vp = 0;
+        if(refeicao.equalsIgnoreCase("Sim"))
+        {
+            vp += REFEICAO;
+        }
+        return vp;
     }
-
     @Override
-    public float valFinal() {
-        return 0;
+    public float valIva()
+    {
+        float valorPagar, iva;
+        valorPagar = vp();
+        iva = valorPagar * IVA;
+        return iva;
+    }
+    public float valFinal()
+    {
+        float valorPagar, iva;
+        valorPagar = vp();
+        iva = valIva();
+        return valorPagar + iva;
     }
 }
