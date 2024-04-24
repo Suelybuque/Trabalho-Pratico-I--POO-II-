@@ -1,4 +1,4 @@
-abstract class Internacional extends Passagem {
+abstract class Internacional extends Passagem implements CalculoFinal_IVA{
 
     protected String visto;
     public static int contInternacional;
@@ -26,5 +26,28 @@ abstract class Internacional extends Passagem {
         return super.toString()+"Internacional{" +
                 "visto='" + visto + '\'' +
                 '}';
+    }
+    public float vp()
+    {
+        float vp = 0;
+        if(visto.equalsIgnoreCase("Nao"))
+        {
+            vp += vp * (TAXA_SEMVISTO);
+        }
+        return vp;
+    }
+    public float valIva()
+    {
+        float valorPagar, iva;
+        valorPagar = vp();
+        iva = valorPagar * IVA;
+        return iva;
+    }
+    public float valFinal()
+    {
+        float valorPagar, iva;
+        valorPagar = vp();
+        iva = valIva();
+        return valorPagar + iva;
     }
 }
