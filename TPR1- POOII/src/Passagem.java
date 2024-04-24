@@ -1,8 +1,8 @@
 public class Passagem {
-    protected String  codigo, nome, apelido, dtpartida, horPartida, horChegada, estado, origem, destino;
+    protected String nome, apelido, dtpartida, horPartida, horChegada, estado, origem, destino;
     protected  float valBase;
-
-    public Passagem (String codigo, String nome, String apelido, String dtpartida, String horPartida, String horChegada, String estado, String origem, String destino, float valBase){
+    protected int   codigo;
+    public Passagem (int codigo, String nome, String apelido, String dtpartida, String horPartida, String horChegada, String estado, String origem, String destino, float valBase){
         this.codigo= codigo;
         this.nome= nome;
         this.apelido= apelido;
@@ -16,14 +16,14 @@ public class Passagem {
     }
 
     public Passagem(){
-        this("", "", "", "", "","", "", "", "",0);
+        this(0, "", "", "", "","", "", "", "",0);
     }
 
     public void setNome(String nome) {
         this.nome = nome;
     }
 
-    public void setCodigo(String codigo) {
+    public void setCodigo(int codigo) {
         this.codigo = codigo;
     }
 
@@ -63,7 +63,7 @@ public class Passagem {
         return valBase;
     }
 
-    public String getCodigo() {
+    public int getCodigo() {
         return codigo;
     }
 
