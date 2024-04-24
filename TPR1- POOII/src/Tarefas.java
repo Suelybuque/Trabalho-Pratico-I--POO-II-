@@ -3,17 +3,15 @@ import java.io.*;
 public class Tarefas {
 
     Vector vec;
-    Validacao validacao;
 
     public Tarefas(){
         vec= new Vector();
-        validacao=new Validacao();
     }
 
     public  void  lerFicheiro(){
         StringTokenizer bloco;
-        String linha,  nome, apelido, dtpartida,visto, horPartida, horChegada, estado, origem, destino, refeicao, criterio1, criterio2, periodo;
-        int qtHoras, codigo;
+        String linha, codigo, nome, apelido, dtpartida,visto, horPartida, horChegada, estado, origem, destino, refeicao, criterio1, criterio2, periodo;
+        int qtHoras;
         float valBase;
 
         try {
@@ -23,7 +21,7 @@ public class Tarefas {
 
             while (linha!=null){
                 bloco= new StringTokenizer(linha, ";");
-                codigo=Integer.parseInt(bloco.nextToken());
+                codigo= bloco.nextToken();
                 nome= bloco.nextToken();
                 apelido= bloco.nextToken();
                 dtpartida= bloco.nextToken();
@@ -57,7 +55,7 @@ public class Tarefas {
         }
     }
 
-    private void createTransito(int codigo, String nome, String apelido, String dtpartida, String horPartida, String horChegada, String estado, String origem, String destino, float valBase, String visto, int qtHoras) {
+    private void createTransito(String codigo, String nome, String apelido, String dtpartida, String horPartida, String horChegada, String estado, String origem, String destino, float valBase, String visto, int qtHoras) {
         Transito t= new Transito();
         t.setCodigo(codigo);
         t.setNome(nome);
@@ -75,7 +73,7 @@ public class Tarefas {
         vec.trimToSize();
     }
 
-    private void createDirecto(int codigo, String nome, String apelido, String dtpartida, String horPartida, String horChegada, String estado, String origem, String destino, float valBase,String visto,  String refeicao) {
+    private void createDirecto(String codigo, String nome, String apelido, String dtpartida, String horPartida, String horChegada, String estado, String origem, String destino, float valBase,String visto,  String refeicao) {
         Directo d= new Directo();
         d.setCodigo(codigo);
         d.setNome(nome);
@@ -93,7 +91,7 @@ public class Tarefas {
         vec.trimToSize();
     }
 
-    private void createDomestico(int codigo, String nome, String apelido, String dtpartida, String horPartida, String horChegada, String estado, String origem, String destino, float valBase, String periodo) {
+    private void createDomestico(String codigo, String nome, String apelido, String dtpartida, String horPartida, String horChegada, String estado, String origem, String destino, float valBase, String periodo) {
         Domestico domes= new Domestico();
         domes.setCodigo(codigo);
         domes.setNome(nome);
@@ -109,6 +107,16 @@ public class Tarefas {
         vec.addElement(domes);
         vec.trimToSize();
     }
-
-
+    public void adaptadorVisualizarDadosSeparados()
+    {
+        Visualizacoes vis = new Visualizacoes();
+        vis.visualizarDadosSeparados(vec);
+    }
+    public void adaptadorValorTotalIva()
+    {
+        Visualizacoes vis = new Visualizacoes();
+        Calculos cal = new Calculos();
+        float valorTotalIVA = cal.valorTotalIVA(vec);
+        vis.visualizaValorTotalIVA(valorTotalIVA);
+    }
 }
