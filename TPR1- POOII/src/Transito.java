@@ -1,7 +1,7 @@
 public class Transito extends Internacional implements CalculoFinal_IVA{
    private int qtHoras;
    public  static int contTransito;
-
+    // public static int contHotel = 0;
    public Transito(String codigo, String nome, String apelido, String dtpartida, String horPartida, String horChegada, String estado, String origem, String destino, float valBase, String visto, int qtHoras) {
        super(codigo, nome, apelido, dtpartida, horPartida, horChegada, estado, origem, destino, valBase, visto);
        this.qtHoras= qtHoras;
@@ -27,14 +27,37 @@ public class Transito extends Internacional implements CalculoFinal_IVA{
                 "qtHoras=" + qtHoras +
                 '}';
     }
+    public float vp()
+    {
+        float vp = 0;
+        if(qtHoras >= 6 || qtHoras <= 12)
+        {
 
-    @Override
-    public float valIva() {
-        return 0;
+            vp -= valBase * DESCONTO_TRANSITO;
+        }
+        else
+        {
+            // Socorro
+            if(qtHoras > 12)
+            {
+                System.out.println("Direito a hotel adquirido !");
+                // contHotel++;
+            }
+        }
+        return vp;
     }
-
-    @Override
-    public float valFinal() {
-        return 0;
+    public float valIva()
+    {
+        float valorPagar, iva;
+        valorPagar = vp();
+        iva = valorPagar * IVA;
+        return iva;
+    }
+    public float valFinal()
+    {
+        float valorPagar, iva;
+        valorPagar = vp();
+        iva = valIva();
+        return valorPagar + iva;
     }
 }
