@@ -1,0 +1,51 @@
+import java.util.*;
+public class Calculos
+{
+    public Calculos()
+    {
+
+    }
+    public float valorTotalIVA(Vector v)
+    {
+        float vt = 0;
+        Passagem p;
+        Internacional internacional;
+        Domestico domestico;
+        Directo directo;
+        Transito transito;
+        for(int i = 0; i < v.size(); i++)
+        {
+            p = (Passagem)v.elementAt(i);
+            if(p instanceof Internacional)
+            {
+                internacional = (Internacional) p;
+                vt += internacional.valIva();
+            }
+            else
+            {
+                if(p instanceof Domestico)
+                {
+                    domestico = (Domestico) p;
+                    vt += domestico.valIva();
+                }
+                else
+                {
+                    if(p instanceof Directo)
+                    {
+                        directo = (Directo) p;
+                        vt += directo.valIva();
+                    }
+                    else
+                    {
+                        if(p instanceof Transito)
+                        {
+                            transito = (Transito) p;
+                            vt += transito.valIva();
+                        }
+                    }
+                }
+            }
+        }
+        return vt;
+    }
+}
