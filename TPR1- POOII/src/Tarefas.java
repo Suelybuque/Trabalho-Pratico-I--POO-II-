@@ -119,4 +119,8 @@ public class Tarefas {
         float valorTotalIVA = cal.valorTotalIVA(vec);
         vis.visualizaValorTotalIVA(valorTotalIVA);
     }
+    public void adaptadorAlterarDados()
+    {
+        Validacao val = new Validacao();
+    }
 }
