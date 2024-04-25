@@ -1,0 +1,4 @@
+20230;Anwar;Machado;01/01/2024;11:00;12:00;Check-in;Maputo;Nampula;13982;Domestico;Noite
+20232;Luana;Wanga;21/01/2024;17:00;22:00;Atrasado;Maputo;Lisboa;85509;Internacional;sim;Directo;Sim
+20230;Joaquina;Wanga;11/01/2024;12:00;13:00;A embarcar;Maputo;Tete;11922;Internacional;sim;Directo; nao
+20233;Suely;Cecy;31/01/2024;19:00;23:00;Atrasado;Maputo;Brasil;65991;Internacional;nao;Transito;14

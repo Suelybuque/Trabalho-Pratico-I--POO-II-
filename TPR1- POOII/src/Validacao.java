@@ -28,9 +28,9 @@ public class Validacao {
 
             do {
                 val=Integer.parseInt(br.readLine());
-                if (val>min && val<max)
+                if (val<min && val>max)
                     System.out.println("Invalido!Tente novamente.");
-            }while (val>min && val<max);
+            }while (val<min && val>max);
 
         }catch (NumberFormatException|IOException nio){
             System.out.println(nio.getMessage());

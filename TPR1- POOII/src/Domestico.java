@@ -1,14 +1,14 @@
 public class Domestico extends  Passagem implements CalculoFinal_IVA{
     private String periodo;
     public  static int contDomestico;
-    public Domestico (String codigo, String nome, String apelido, String dtpartida, String horPartida, String horChegada, String estado, String origem, String destino, float valBase, String periodo){
+    public Domestico (int codigo, String nome, String apelido, String dtpartida, String horPartida, String horChegada, String estado, String origem, String destino, float valBase, String periodo){
         super(codigo, nome, apelido, dtpartida, horPartida, horChegada, estado, origem, destino, valBase);
         this.periodo= periodo;
         contDomestico++;
     }
 
     public Domestico(){
-        this("", "", "", "", "","", "", "", "",0, "");
+        this(0, "", "", "", "","", "", "", "",0, "");
 
     }
 
@@ -27,35 +27,13 @@ public class Domestico extends  Passagem implements CalculoFinal_IVA{
                 '}';
     }
 
-    public float vp()
-    {
-        float vp = 0;
-        if(periodo.equalsIgnoreCase("Tarde"))
-        {
-            vp += vp * (VIAGEM_TARDE);
-        }
-        else
-        {
-            if(periodo.equalsIgnoreCase("Noite"))
-            {
-                vp += (vp * VIAGEM_NOITE);
-            }
-        }
-        return vp;
-    }
     @Override
-    public float valIva()
-    {
-        float valorPagar, iva;
-        valorPagar = vp();
-        iva = valorPagar * IVA;
-        return iva;
+    public float valIva() {
+        return 0;
     }
-    public float valFinal()
-    {
-        float valorPagar, iva;
-        valorPagar = vp();
-        iva = valIva();
-        return valorPagar + iva;
+
+    @Override
+    public float valFinal() {
+        return 0;
     }
 }

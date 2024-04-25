@@ -1,5 +1,10 @@
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+        Tarefas tf= new Tarefas();
+        System.out.println("A executar");
+        tf.lerFicheiro();
+        tf.adaptQtTipo();
+        tf.remover();
+        tf.adaptVisDados();
     }
 }

@@ -1,16 +1,16 @@
-abstract class Internacional extends Passagem implements CalculoFinal_IVA{
+abstract class Internacional extends Passagem {
 
     protected String visto;
     public static int contInternacional;
 
-    public Internacional (String codigo, String nome, String apelido, String dtpartida, String horPartida, String horChegada, String estado, String origem, String destino, float valBase, String visto){
+    public Internacional (int codigo, String nome, String apelido, String dtpartida, String horPartida, String horChegada, String estado, String origem, String destino, float valBase, String visto){
         super(codigo, nome, apelido, dtpartida, horPartida, horChegada, estado, origem, destino, valBase);
         this.visto= visto;
         contInternacional++;
     }
 
     public Internacional(){
-        this("", "", "", "", "","", "", "", "",0, "");
+        this(0, "", "", "", "","", "", "", "",0, "");
     }
 
     public String getVisto() {
@@ -26,28 +26,5 @@ abstract class Internacional extends Passagem implements CalculoFinal_IVA{
         return super.toString()+"Internacional{" +
                 "visto='" + visto + '\'' +
                 '}';
-    }
-    public float vp()
-    {
-        float vp = 0;
-        if(visto.equalsIgnoreCase("Nao"))
-        {
-            vp += vp * (TAXA_SEMVISTO);
-        }
-        return vp;
-    }
-    public float valIva()
-    {
-        float valorPagar, iva;
-        valorPagar = vp();
-        iva = valorPagar * IVA;
-        return iva;
-    }
-    public float valFinal()
-    {
-        float valorPagar, iva;
-        valorPagar = vp();
-        iva = valIva();
-        return valorPagar + iva;
     }
 }
