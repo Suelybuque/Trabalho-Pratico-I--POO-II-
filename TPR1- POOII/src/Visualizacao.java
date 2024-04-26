@@ -48,6 +48,27 @@ public class Visualizacao {
 
     }
 
+    public void vooAbril(Vector vec){
+        Passagem pass;
+        System.out.println("Voos no mes de Abril");
+
+        for (int i=0; i<vec.size(); i++){
+            pass= (Passagem) vec.elementAt(i);
+            String data= pass.getDtpartida().substring(3, 5);
+            if (data.equals("04")){
+                System.out.println(pass);
+            }
+        }
+    }
     public void visualizaValorTotalIVA(float valorTotalIVA) {
+        System.out.println("Valor total de Iva:" + valorTotalIVA);
+    }
+
+    public void visualizarEstadoLAM(float valorTotalLAM)
+    {
+        if(valorTotalLAM > 750000)
+            System.out.println("LAM esta em lucro !\nLucro : "+valorTotalLAM);
+        else
+            System.out.println("LAM esta em prejuizo !");
     }
 }

@@ -2,22 +2,23 @@ import java.io.*;
 public class Validacao {
     public Validacao(){};
 
-//    public String validarString(String str){
-//        String s=" ";
-//        System.out.println(str);
-//        try {
-//            BufferedReader br= new BufferedReader(new InputStreamReader(System.in));
-//            do {
-//                s= br.readLine();
-//                if (s.length()<=3)
-//                    System.out.println("Invalido! Tente novamente");
-//            }while (s.length()<=3);
-//        }catch (IOException io){
-//            System.out.println(io.getMessage());
-//        }
-//
-//        return s;
-//    }
+    public String validarString(String str ){
+        String s=" ";
+
+        try {
+            BufferedReader br= new BufferedReader(new InputStreamReader(System.in));
+            do {
+                System.out.println(str);
+                s= br.readLine();
+                if (s.length()<5)
+                    System.out.println("Invalido! Tente novamente");
+            }while (s.length()<5);
+        }catch (IOException io){
+            System.out.println(io.getMessage());
+        }
+
+        return s;
+    }
 
     public int validarInt(String str, int  min, int max){
         int val=0;

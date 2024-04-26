@@ -6,13 +6,14 @@ public class Tarefas {
     Validacao validacao;
     Visualizacao vis ;
     Pesquisa pes;
-   // Calculos cal;
+   Calculos cal;
 
     public Tarefas(){
         vec= new Vector();
         validacao=new Validacao();
         vis = new Visualizacao();
         pes= new Pesquisa();
+        cal =new Calculos();
     }
 
     public  void  lerFicheiro(){
@@ -128,11 +129,27 @@ public class Tarefas {
     }
     public void adaptadorValorTotalIva()
     {
-        vis.visualizaValorTotalIVA(0);
+        vis.visualizaValorTotalIVA(cal.valorTotalIVA(vec));
+    }
+
+    public void adaptValorTotal(){
+        float valTotal= cal.calcularVtLAM(vec);
+        vis.visualizarEstadoLAM(valTotal);
     }
     public void adaptadorAlterarDados()
     {
-        Validacao val = new Validacao();
+        Alteracao alt= new Alteracao();
+
+        String name= validacao.validarString("Introduza o nome");
+        String surname= validacao.validarString("Introduza o apelido");
+        int indice= pes.pesquisa(vec, name, surname);
+        alt.alterarDados(vec, indice);
+
+
+    }
+
+    public void adaptQtHotel(){
+        System.out.println(cal.numeroHotel(vec));
     }
 
     public void remover(){
@@ -151,6 +168,11 @@ public class Tarefas {
         System.out.println("Quantidade de voos \ndomesticos:"+Domestico.contDomestico+ "\nInternacionais:"
                 +Internacional.contInternacional + "\nDirectos:"+Directo.contDirecto+ "\nTransito:"+Transito.contTransito);
     }
+
+    public void adaptMesAbril(){
+        vis.vooAbril(vec);
+    }
+
 
 
 

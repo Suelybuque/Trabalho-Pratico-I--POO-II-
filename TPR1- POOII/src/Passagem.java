@@ -79,6 +79,14 @@ public class Passagem {
         return estado;
     }
 
+    public String getNome() {
+        return nome;
+    }
+
+    public String getApelido() {
+        return apelido;
+    }
+
     @Override
     public String toString() {
         return "Passagem{" +

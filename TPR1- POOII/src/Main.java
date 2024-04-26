@@ -3,8 +3,9 @@ public class Main {
         Tarefas tf= new Tarefas();
         System.out.println("A executar");
         tf.lerFicheiro();
-        tf.adaptQtTipo();
-        tf.remover();
+        //tf.adaptQtTipo();
+       // tf.remover();
         tf.adaptVisDados();
+        tf.adaptadorAlterarDados();
     }
 }
