@@ -31,12 +31,21 @@ public final class Directo extends Internacional implements CalculoFinal_IVA {
     }
 
     @Override
+    public float valPagar() {
+       float val=valBase;
+       val+=valBase*INTER_TAXA;
+       if (refeicao.equalsIgnoreCase("Sim"))
+           val+=REFEICAO;
+        return val;
+    }
+
+    @Override
     public float valIva() {
-        return 0;
+        return valPagar()*IVA;
     }
 
     @Override
     public float valFinal() {
-        return 0;
+        return valPagar()+valIva();
     }
 }

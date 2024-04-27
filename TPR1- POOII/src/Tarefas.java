@@ -3,6 +3,8 @@ import java.io.*;
 public class Tarefas {
 
     Vector vec;
+
+    Vector vec_Reserva;
     Validacao validacao;
     Visualizacao vis ;
     Pesquisa pes;
@@ -14,6 +16,7 @@ public class Tarefas {
         vis = new Visualizacao();
         pes= new Pesquisa();
         cal =new Calculos();
+        vec_Reserva=new Vector();
     }
 
     public  void  lerFicheiro(){
@@ -122,9 +125,15 @@ public class Tarefas {
     }
 
 
-    public void adaptVisDados()
-    {  vis.visualizarDirecto(vec);
+    public void adaptDadosDomestico(){
         vis.visualizarDomesticos(vec);
+    }
+
+    public void adaptDadosDirecto(){
+        vis.visualizarDirecto(vec);
+    }
+
+    public void adaptDadosTransito(){
         vis.visualizarTransito(vec);
     }
     public void adaptadorValorTotalIva()
@@ -173,6 +182,43 @@ public class Tarefas {
         vis.vooAbril(vec);
     }
 
+    public void adaptEstado(){vis.visualizarEstadoLAM(cal.calcularVtLAM(vec));}
+
+
+    //Bonus
+
+    public void reserva(int nReserva){
+        String classe, dataPartida, horaPartida;
+        int codigoReserva, codigoVoo;
+        Vector<String> reserva= new Vector();
+
+        for (int i=0; i<nReserva; i++){
+            codigoReserva= validacao.validarInt("Introduza o codigo de reserva", 10001, 99999);
+            dataPartida= validacao.validarString("Introduza a data de partida (DD/MM/AAAA)");
+            horaPartida=validacao.validarString("Introduza a hora de partida (HH:MM");
+            codigoVoo= validacao.validarInt("Introduza o codigo de reserva", 10001, 99999);
+            classe = validacao.validarString("Introduza a classe (Economica/executiva)");
+
+            reserva.add(Integer.toString(codigoReserva));
+            reserva.add(dataPartida);
+            reserva.add(horaPartida);
+            reserva.add(Integer.toString(codigoVoo));
+            reserva.add(classe);
+
+            vec_Reserva.add(reserva);
+            vec_Reserva.trimToSize();
+        }
+
+    }
+
+    public void adaptEscrever(){
+        EscreverFicheiro ef= new EscreverFicheiro();
+        ef.escrever(vec_Reserva);
+    }
+
+    public void adaptVisDadosReserva(){
+        vis.visualizarDadosReserva(vec_Reserva);
+    }
 
 
 

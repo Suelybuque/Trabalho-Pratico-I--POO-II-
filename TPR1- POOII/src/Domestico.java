@@ -28,12 +28,22 @@ public class Domestico extends  Passagem implements CalculoFinal_IVA{
     }
 
     @Override
+    public float valPagar() {
+        float val=valBase;
+        if (periodo.equalsIgnoreCase("Tarde"))
+            val+=valBase*TARDE;
+        else if (periodo.equalsIgnoreCase("Noite"))
+            val+=valBase*NOITE;
+        return val;
+    }
+
+    @Override
     public float valIva() {
-        return 0;
+        return valPagar()*IVA;
     }
 
     @Override
     public float valFinal() {
-        return 0;
+        return valPagar()+valIva();
     }
 }
