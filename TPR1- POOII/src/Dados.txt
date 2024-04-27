@@ -1,0 +1,20 @@
+20230;Anwar;Machado;11/09/2024;18:00;12:00;Check-in;Maputo;Portugal;13892;Directo;Noite
+20221;Luana;Wanga;10/04/2024;16:00;11:00;A embarcar;Maputo;;13986;Domestico;Tarde
+22230;Suely;Cecilia;06/03/2024;06:00;13:00;Atrasado;Maputo;Nampula;13678;Domestico;Manha
+20130;Yumna;Sultan;09/01/2024;19:00;11:00;Check-in;Beira;Suazilandia;13698;Transito;Noite
+20170;Winacy;Vitorino;14/01/2024;16:00;13:00;A embarcar;Maputo;Nampula;13992;Domestico;Trade
+20930;Yassin;Daude;21/07/2024;09:00;20:00;Atrasado;Tete;Durban;13997;Internacional;Manha
+20970;Thewyn;Arone;30/01/2024;20:00;10:00;Check-in;Gaza;Beira;13222;Domestico;Noite
+20567;Ilven;Guedes;12/06/2024;07:00;18:00;CA embaracar;Maputo;Inglatera;13999;Internacinal;Manha
+20098;Tatiana;Machado;16/04/2024;18:00;12:00;Check-in;Maputo;Portugal;13862;Directo;Noite
+20652;Graciete;Revocat;11/03/2024;16:00;11:00;A embarcar;Maputo;Nacala;13706;Domestico;Tarde
+20986;Marcia;Cecilia;07/07/2024;08:00;17:00;Atrasado;Maputo;Nampula;13660;Domestico;Manha
+20123;Patricio;Sultan;08/04/2024;20:00;12:00;Check-in;Beira;Suazilandi;13409;Transito;Noite
+20456;Luis;Vitorino;13/06/2024;16:00;19:00;A embarcar;Maputo;Nampula;13225;Domestico;Trade
+20789;Yunisse;Daude;02/05/2024;11:00;20:00;Atrasado;Tete;Durban;13999;Internacional;Manha
+20905;Patrick;Arone;31/05/2024;21:10;15:30Check-in;Gaza;Beira;1312;Domestico;Noite
+20195;Shontelle;Guedes;12/01/2024;09:00;19:00;CA embaracar;Maputo;Inglatera;13999;Internacinal;Manha
+20305;Luana;Cristina;08/02/2024;19:00;17:00;Check-in;Maputo;Portugal;13995;Directo;Noite
+20188;Ventura;Buque;05/04/2024;15:00;10:00;A embarcar;Maputo;Inhambane;13986;Domestico;Tarde
+20028;Thiago;Correia;15/07/2024;10:00;19:00;Atrasado;Maputo;Nampula;1395;Domestico;Manha
+20028;Filipe;Nhantumbo;21/06/2024;05:00;18:00;Atrasado;Maputo;Nampula;1395;Domestico;Manha
